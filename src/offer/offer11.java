@@ -3,13 +3,14 @@ package offer;
 public class offer11 {
     /**
      * 旋转数组中的最小数字
+     * 3 4 5 1 2
      */
     public int Min(int[] nums){
         int index1 = 0;
         int index2 = nums.length-1;
         int indexMid = index1;
         while(nums[index1] >= nums[index2]){
-            if(index2 - index1 == 1){
+            if((index2 - index1) == 1){
                 indexMid = index2;
                 break;
             }

@@ -1,6 +1,7 @@
 package offer;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 public class offer6 {
@@ -33,9 +34,8 @@ public class offer6 {
     头结点是在头插法中使用的一个额外节点，这个节点不存储值；
     第一个节点就是链表的第一个真正存储值的节点。
    */
-    public ArrayList<Integer> printListFromTailToHead1(ListNode listNode){
+    public List<Integer> printListFromTailToHead1(ListNode listNode){
         ListNode head = new ListNode(-1);
-        //第一次循环head.next = null;
         while(listNode!=null){
             ListNode memo = listNode.next;
             //第一次循环head.next为null
