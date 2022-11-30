@@ -19,7 +19,7 @@ public class offer4 {
     该二维数组中的一个数，它左边的数都比它小，下边的数都比它大。因此，从右上角开始查找，就可以根据 target 和当前元
     素的大小关系来缩小查找区间，当前元素的查找区间为左下角的所有元素。
      */
-    public boolean Find(int target,int[][] matrix){
+    public boolean find(int target,int[][] matrix){
         if(matrix == null || matrix.length == 0 || matrix[0].length == 0)
             return false;
         int rows = matrix.length ,cols = matrix[0].length;

@@ -11,7 +11,7 @@ public class offer3 {
     求解。
 
      */
-    public boolean dupicate(int[] nums,int length,int[] duplication){
+    public boolean duplicate(int[] nums,int length,int[] duplication){
         if(nums == null || length <=0)
             return false;
         for(int i=0;i<length;i++){

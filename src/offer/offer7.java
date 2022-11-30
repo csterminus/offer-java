@@ -16,6 +16,7 @@ public class offer7 {
         TreeNode(int x){val = x;}
     }
     private Map<Integer,Integer> indexForInOrders = new HashMap<>();
+
     public TreeNode reConstructBinaryTree(int[] pre,int[] in){
         for(int i = 0;i < in.length;i++){
             indexForInOrders.put(in[i],i);

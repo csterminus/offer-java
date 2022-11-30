@@ -25,7 +25,6 @@ public class offer6 {
             return;
         printListFromTailToHead(listNode.next);
         System.out.println(listNode);
-
     }
     /*
     头插法
