@@ -1,6 +1,7 @@
 package datastructure.Heap;
 
-import com.Array.Array;
+
+import datastructure.Array.Array;
 
 public class MaxHeap<E extends Comparable<E>> {
     private Array<E> data;

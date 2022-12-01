@@ -1,6 +1,7 @@
 package datastructure.LinkerList;
 
-import com.Array.Queue;
+
+import datastructure.Array.Queue;
 
 public class LinkedListQueue<E> implements Queue<E> {
     private class Node{

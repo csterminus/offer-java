@@ -1,6 +1,8 @@
 package datastructure.Tree;
 
-import com.LinkerList.LinkedList;
+import datastructure.LinkerList.LinkedList;
+
+;
 
 public class LinkedListSet<E> implements Set<E>{
     private LinkedList<E> list;

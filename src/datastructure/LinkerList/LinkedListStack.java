@@ -1,6 +1,7 @@
 package datastructure.LinkerList;
 
-import com.Array.Stack;
+
+import datastructure.Array.Stack;
 
 public class LinkedListStack<E> implements Stack<E> {
     private LinkedList<E> list;

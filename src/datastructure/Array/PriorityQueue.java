@@ -1,6 +1,7 @@
 package datastructure.Array;
 
-import com.Heap.MaxHeap;
+
+import datastructure.Heap.MaxHeap;
 
 public class PriorityQueue<E extends Comparable<E>> implements Queue<E> {
 
