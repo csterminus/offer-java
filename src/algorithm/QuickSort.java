@@ -63,8 +63,8 @@ public class QuickSort {
 
     public static void main(String[] args) {
         int[] arr = { 87, 45, 78, 32, 17, 65, 53, 9, 122 };
-       // quickSort(arr,0,arr.length-1);
-        quickSortNoRec(arr,0,arr.length-1);
+        quickSort(arr,0,arr.length-1);
+        //quickSortNoRec(arr,0,arr.length-1);
         System.out.println(Arrays.toString(arr));
     }
 }

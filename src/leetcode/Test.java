@@ -158,61 +158,6 @@ public class Test {
         return count;
     }
 
-    public int solution4(int res){
-        int count = 0;
-        while(res != 0){
-            ++ count;
-            res = res & (res - 1);
-        }
-        return count;
-    }
-
-    public long solution5(int n){
-        if(n < 3){
-            return n - 1;
-        }
-        long res = 1;
-        long p = 10000000 + 7;
-        long lineCount = n / 3;
-        int b = n % 3;
-        for (int i = 1;i < lineCount;i++){
-            res = res * 3 % p;
-        }
-        if(b == 0){
-            return res * 3;
-        }
-        if(b == 1){
-            return res * 4;
-        }
-        return res;
-    }
-
-
-    public List<String> letterCombinations(String digits) {
-        if(digits == null || digits.equals("")){
-            return new ArrayList<>();
-        }
-        Map<Character,String> map = new HashMap<>();
-        map.put('2',"abc");
-        map.put('3',"def");
-        map.put('4',"ghi");
-        map.put('5',"jkl");
-        map.put('6',"mno");
-        map.put('7',"pqrs");
-        map.put('8',"tuv");
-        map.put('9',"wxyz");
-        char[] strs = digits.toCharArray();
-        char[][] mobileArray = new char[strs.length][];
-        for(int i = 0;i < strs.length;i++) {
-            String str = map.get(strs[i]);
-            mobileArray[i] = str.toCharArray();
-        }
-
-        return null;
-
-    }
-
-
     public static void main (String[]args){
         Test test = new Test();
         int[] nums = new int[]{5,9,10,22,35,100,-1,1,3};
@@ -241,10 +186,8 @@ public class Test {
 
 //        Test test6 = new Test();
 //        System.out.println(test6.lastIterTreeNode(test6.buildTreeNodes()));
-//        Test test7 = new Test();
-//        System.out.println(test7.letterCombinations("234"));
     }
-
+    //层次遍历
     public List<Integer> iterTreeNode(TreeLinkNode treeLinkNode){
         if(treeLinkNode == null){
             return new ArrayList<>();

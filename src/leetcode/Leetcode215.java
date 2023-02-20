@@ -1,0 +1,40 @@
+package leetcode;
+
+public class Leetcode215 {
+    public static void main(String[] args) {
+
+    }
+
+    int partition(int[] nums,int i,int j){
+        int target = nums[i];
+        while(i < j){
+            while(i < j && nums[j] >= target){
+                j--;
+            }
+            nums[i] = nums[j];
+            while(i < j && nums[i] <= target){
+                i++;
+            }
+            nums[j] = nums[i];
+        }
+        nums[i] = target;
+        return i;
+    }
+    //根据快速排序的知识我们可以知道，每次partition算法会将所选的基准数（记为target）放到正确的位置，
+    // 而我们其实只需要知道第k大的位置上的数是什么，而不需要关心其他位置是否有序。
+    // 那么我们可以根据基准数的位置来判断，假如k在target的左边，那么我们只需要递归target左边即可，而不需要关心target右边是否有序；
+    // 反之，如果k在target右边，我们只需要递归右边
+    int quickSelect(int[] nums,int i,int j,int index){
+        if(i >= j){
+            return nums[i];
+        }
+        int k = partition(nums, i, j);
+        if(k == index){
+            return nums[k];
+        }else if(k < index){
+            return quickSelect(nums, k + 1, j, index);
+        }else {
+            return quickSelect(nums, i, k- 1, index);
+        }
+    }
+}

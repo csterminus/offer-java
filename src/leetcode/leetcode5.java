@@ -3,7 +3,7 @@ package leetcode;
 //最长回文字串
 public class leetcode5 {
     public static void main(String[] args) {
-        String s = "ac";
+        String s = "ababc";
         leetcode5 leetcode5 = new leetcode5();
         System.out.println(leetcode5.longestPalindrome(s));
     }
@@ -16,7 +16,7 @@ public class leetcode5 {
         }
         int maxLen = 1;
         String maxStr = "";
-        boolean dp[][] = new boolean[s.length()][s.length()];
+        boolean[][] dp = new boolean[s.length()][s.length()];
 
         for(int i = s.length() - 1;i >= 0;i--){
             for(int j = i;j < s.length();j++){
