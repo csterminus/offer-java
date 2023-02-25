@@ -1,7 +1,7 @@
 package leetcode;
 
 public class Leetcode142 {
-
+    //链表是否有环
     public class ListNode {
         int val;
         ListNode next;

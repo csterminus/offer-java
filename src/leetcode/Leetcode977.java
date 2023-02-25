@@ -1,6 +1,7 @@
 package leetcode;
 
 public class Leetcode977 {
+    //有序数组的平方
     public static void main(String[] args) {
         Leetcode977 leetcode977 = new Leetcode977();
         int[] nums = new int[]{-4,-1,0,3,10};

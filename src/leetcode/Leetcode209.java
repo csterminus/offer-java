@@ -1,6 +1,7 @@
 package leetcode;
 
 public class Leetcode209 {
+    //长度最小的子数组，找出该数组中满足其和 ≥ target 的长度最小的 连续子数组
     public static void main(String[] args) {
         Leetcode209 leetcode209 = new Leetcode209();
         int[] nums = new int[]{10,2,3};

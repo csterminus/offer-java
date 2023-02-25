@@ -1,6 +1,7 @@
 package leetcode;
 
 public class Leetcode215 {
+    //快排的思路找出k大个数
     public static void main(String[] args) {
 
     }

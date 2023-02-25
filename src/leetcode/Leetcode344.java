@@ -1,6 +1,7 @@
 package leetcode;
 
 public class Leetcode344 {
+    //翻转数组
     public static void main(String[] args) {
         Leetcode344 leetcode344 = new Leetcode344();
         char[] s = new char[]{'h','e','l','l','o'};

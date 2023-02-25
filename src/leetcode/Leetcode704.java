@@ -1,6 +1,7 @@
 package leetcode;
 
 public class Leetcode704 {
+    //二分查找
     public static void main(String[] args) {
         Leetcode704 leetcode704 = new Leetcode704();
         int[] nums = new int[]{-1,0,3,5,9,12};

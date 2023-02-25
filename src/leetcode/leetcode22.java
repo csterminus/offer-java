@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class leetcode22 {
+    //括号生成，生成所有有效的括号组合
     public static void main(String[] args) {
         leetcode22 leetcode22 = new leetcode22();
         System.out.println(leetcode22.generateParenthesis(3));

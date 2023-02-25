@@ -3,6 +3,7 @@ package leetcode;
 import java.util.Stack;
 
 public class leetcode20 {
+    //有效的括号，匹配括号
     public static void main(String[] args) {
         String str = "]]";
         leetcode20 leetcode20 = new leetcode20();

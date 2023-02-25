@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class leetcode15 {
+    //三数之和
     public static void main(String[] args) {
         leetcode15 leetcode15 = new leetcode15();
         int[] nums = new int[]{-1,0,1,2,-1,-4,-2,-3,3,0,4};

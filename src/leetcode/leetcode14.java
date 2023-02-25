@@ -3,6 +3,7 @@ package leetcode;
 import java.util.Arrays;
 
 public class leetcode14 {
+    //最长公共前缀
     public static void main(String[] args) {
         String[] strings = new String[]{"a","ab"};
         leetcode14 leetcode14 = new leetcode14();

@@ -1,7 +1,7 @@
 package leetcode;
 
-class leetcode19 {
-
+public class leetcode19 {
+    //移除链表倒数第n个元素
     public class ListNode {
         int val;
         ListNode next;

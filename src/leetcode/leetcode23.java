@@ -1,7 +1,7 @@
 package leetcode;
 
 public class leetcode23 {
-
+    //合并k个链表
     public class ListNode {
         int val;
         ListNode next;

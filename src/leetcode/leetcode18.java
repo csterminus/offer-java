@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class leetcode18 {
+    //四数之和
     public static void main(String[] args) {
         leetcode18 leetcode18 = new leetcode18();
         int[] nums = new int[]{1000000000,1000000000,1000000000,1000000000};

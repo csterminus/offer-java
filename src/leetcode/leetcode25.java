@@ -1,7 +1,7 @@
 package leetcode;
 
 public class leetcode25 {
-
+    //翻转每k个链表
      public class ListNode {
       int val;
       ListNode next;

@@ -1,6 +1,7 @@
 package leetcode;
 
 public class Leetcode203 {
+    //移除链表中给定的元素
       public class ListNode {
        int val;
        ListNode next;

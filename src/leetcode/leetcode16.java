@@ -1,10 +1,9 @@
 package leetcode;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class leetcode16 {
+    //最接近的三数之和，接近目标值
     public static void main(String[] args) {
         leetcode16 leetcode16 = new leetcode16();
         int[] nums = new int[]{0,0,0};
