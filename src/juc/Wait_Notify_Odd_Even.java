@@ -2,7 +2,7 @@ package juc;
 
 public class Wait_Notify_Odd_Even {
 
-    private Object monitor = new Object();
+    private static final Object monitor = new Object();
 
     private volatile int count;
 

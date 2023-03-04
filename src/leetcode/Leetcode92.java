@@ -1,7 +1,7 @@
 package leetcode;
 
 public class Leetcode92 {
-    //翻转链表
+    //翻转链表 m - n
     public class ListNode{
         ListNode next;
         int val;

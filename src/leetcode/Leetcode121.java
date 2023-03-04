@@ -9,7 +9,20 @@ public class Leetcode121 {
     }
 
     public int maxProfit (int[] prices) {
-        return 0;
+        if(prices == null || prices.length == 0){
+            return 0;
+        }
+        // 因为 今天的最大利润 = 今天的价格 - 以前的最低价格
+        // 且 昨天的最大利润 = 昨天天的价格 - 以前的最低价格
+        // 所以今天的最大利润 = 今天的价格 - 昨天的价格 + 昨天的最大利润
+        int[] dp_max = new int[prices.length];
+        int res = 0;
+        dp_max[0] = 0;
+        for(int i = 1;i < prices.length;i++){
+            dp_max[i] = dp_max[i - 1] + prices[i] - prices[i - 1] > 0 ? dp_max[i - 1] + prices[i] - prices[i - 1] : 0;
+            res = Math.max(res,dp_max[i]);
+        }
+        return res;
 
     }
 }

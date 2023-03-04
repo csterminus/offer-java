@@ -3,7 +3,8 @@ package leetcode;
 public class Leetcode215 {
     //快排的思路找出k大个数
     public static void main(String[] args) {
-
+        Leetcode215 leetcode215 = new Leetcode215();
+        int[]
     }
 
     int partition(int[] nums,int i,int j){
