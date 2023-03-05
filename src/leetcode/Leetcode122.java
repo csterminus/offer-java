@@ -1,6 +1,7 @@
 package leetcode;
 
 public class Leetcode122 {
+    //打家劫舍2
     public static void main(String[] args) {
         Leetcode122 leetcode122 = new Leetcode122();
         int[] price = new int[]{8,9,2,5,4,7,1};
@@ -12,6 +13,7 @@ public class Leetcode122 {
             return 0;
         }
         int sum = 0;
+        //后一天比前一天大就++
         for(int i = 1;i < prices.length;i++){
             if(prices[i] > prices[i - 1]){
                 sum = sum + prices[i] - prices[i - 1];

@@ -39,6 +39,17 @@ public class Leetcode92 {
         }
         return dummy.next;
     }
+    //翻转链表
+    public ListNode reverseList(ListNode head) {
+        ListNode cur = null;
+        while(head != null){
+            ListNode temp = head;
+            head = head.next;
+            temp.next = cur;
+            cur = temp;
+        }
+        return cur;
+    }
 
     public ListNode build(){
         ListNode node = new ListNode(1);

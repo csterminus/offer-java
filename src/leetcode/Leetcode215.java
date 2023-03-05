@@ -4,7 +4,8 @@ public class Leetcode215 {
     //快排的思路找出k大个数
     public static void main(String[] args) {
         Leetcode215 leetcode215 = new Leetcode215();
-        int[]
+        int[] nums = new int[]{0,1,2,2,3,0,4,2};
+        System.out.println(leetcode215.quickSelect(nums,0,nums.length - 1,3));
     }
 
     int partition(int[] nums,int i,int j){
