@@ -4,8 +4,9 @@ public class Leetcode215 {
     //快排的思路找出k大个数
     public static void main(String[] args) {
         Leetcode215 leetcode215 = new Leetcode215();
-        int[] nums = new int[]{0,1,2,2,3,0,4,2};
-        System.out.println(leetcode215.quickSelect(nums,0,nums.length - 1,3));
+        int[] nums = new int[]{3,2,1,5,6,4};
+        int k = 2;
+        System.out.println(leetcode215.quickSelect(nums,0,nums.length - 1,nums.length - k));
     }
 
     int partition(int[] nums,int i,int j){
@@ -28,16 +29,13 @@ public class Leetcode215 {
     // 那么我们可以根据基准数的位置来判断，假如k在target的左边，那么我们只需要递归target左边即可，而不需要关心target右边是否有序；
     // 反之，如果k在target右边，我们只需要递归右边
     int quickSelect(int[] nums,int i,int j,int index){
-        if(i >= j){
-            return nums[i];
-        }
         int k = partition(nums, i, j);
         if(k == index){
             return nums[k];
         }else if(k < index){
             return quickSelect(nums, k + 1, j, index);
         }else {
-            return quickSelect(nums, i, k- 1, index);
+            return quickSelect(nums, i,k - 1, index);
         }
     }
 }
