@@ -34,4 +34,21 @@ public class offer7 {
         root.right = reConstructBinaryTree(pre, preL+leftTreeSize+1, preR, inL+leftTreeSize+1);
         return root;
     }
+    public TreeNode build(int[] preorder,int[] inorder,int left,int right,int inL){
+        if(left > right){
+            return null;
+        }
+        TreeNode root = new TreeNode(preorder[left]);
+        int index = 0;
+        for(int i = 0;i < inorder.length;i++){
+            if(inorder[i] == root.val){
+                index = i;
+                break;
+            }
+        }
+        int leftSize = index - inL;
+        root.left = build(preorder,inorder,left + 1,left + leftSize,inL);
+        root.right = build(preorder,inorder,left + leftSize + 1,right,inL + leftSize + 1);
+        return root;
+    }
 }
