@@ -1,7 +1,7 @@
 package leetcode;
 
 public class Leetcode122 {
-    //打家劫舍2
+    //打家劫舍
     public static void main(String[] args) {
         Leetcode122 leetcode122 = new Leetcode122();
         int[] price = new int[]{8,9,2,5,4,7,1};

@@ -159,9 +159,9 @@ public class Test {
     }
 
     public static void main (String[]args){
-        Test test = new Test();
-        int[] nums = new int[]{5,9,10,22,35,100,-1,1,3};
-        System.out.println(test.solution2(nums));
+//        Test test = new Test();
+//        int[] nums = new int[]{5,9,10,22,35,100,-1,1,3};
+//        System.out.println(test.solution2(nums));
 
 //        char[][] word = new char[][]{
 //                {'a','a'}
@@ -186,6 +186,9 @@ public class Test {
 
 //        Test test6 = new Test();
 //        System.out.println(test6.lastIterTreeNode(test6.buildTreeNodes()));
+
+        Test test1 = new Test();
+        System.out.println(test1.pathSum(test1.buildTreeNodes(), 8));
     }
     //层次遍历
     public List<Integer> iterTreeNode(TreeLinkNode treeLinkNode){
@@ -289,6 +292,31 @@ public class Test {
         treeLinkNode3.left = treeLinkNode6;
         treeLinkNode3.right = treeLinkNode7;
         return treeLinkNode1;
+    }
+
+    public List<List<Integer>> pathSum(TreeLinkNode root, int targetSum) {
+        if(root == null){
+            return new ArrayList<>();
+        }
+        List<List<Integer>> res = new ArrayList<>();
+        Solution(res,new ArrayList<>(),root,0,targetSum);
+        return res;
+    }
+
+    public void Solution(List<List<Integer>> res,List<Integer> temp,TreeLinkNode root,int sum,int targetSum){
+        if(root == null){
+            return;
+        }
+        if(root.left == null && root.right == null && root.val + sum == targetSum){
+            temp.add(root.val);
+            res.add(new ArrayList<>(temp));
+            temp.remove(temp.size() - 1);
+            return;
+        }
+        temp.add(root.val);
+        Solution(res,temp,root.left,sum + root.val,targetSum);
+        Solution(res,temp,root.right,sum + root.val,targetSum);
+        temp.remove(temp.size() - 1);
     }
 
 }
