@@ -5,8 +5,10 @@ import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 
+//Lock锁使用
 public class Mutex implements Lock {
     private final Sync sync = new Sync();
+
     @Override
     public void lock() {
         sync.acquire(1);
@@ -24,7 +26,7 @@ public class Mutex implements Lock {
 
     @Override
     public boolean tryLock(long time, TimeUnit unit) throws InterruptedException {
-        return sync.tryAcquireNanos(1,unit.toNanos(time));
+        return sync.tryAcquireNanos(1, unit.toNanos(time));
     }
 
     @Override
@@ -37,10 +39,10 @@ public class Mutex implements Lock {
         return sync.newCondition();
     }
 
-    private static class Sync extends AbstractQueuedSynchronizer{
+    private static class Sync extends AbstractQueuedSynchronizer {
         @Override
         protected boolean tryAcquire(int arg) {
-            if(super.compareAndSetState(0,1)){
+            if (super.compareAndSetState(0, 1)) {
                 super.setExclusiveOwnerThread(Thread.currentThread());
                 return true;
             }
@@ -49,7 +51,7 @@ public class Mutex implements Lock {
 
         @Override
         protected boolean tryRelease(int arg) {
-            if(super.getState() == 0){
+            if (super.getState() == 0) {
                 throw new IllegalMonitorStateException();
             }
             super.setExclusiveOwnerThread(null);
@@ -62,7 +64,7 @@ public class Mutex implements Lock {
             return super.getState() == 1;
         }
 
-        Condition newCondition(){
+        Condition newCondition() {
             return new ConditionObject();
         }
     }

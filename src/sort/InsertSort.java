@@ -1,4 +1,4 @@
-package algorithm;
+package sort;
 
 import java.util.Arrays;
 
@@ -11,21 +11,21 @@ public class InsertSort {
     也就是说，插入排序的思想是，将新来的元素按顺序放入一个已有的有序序列当中。
 
      */
-    public static void sort(int[] arrays ){
+    public static void sort(int[] arrays) {
         int temp;
-        for(int i = 1;i < arrays.length;i ++){
+        for (int i = 1; i < arrays.length; i++) {
             temp = arrays[i];
             int j = i - 1;
-            while(j >= 0 && arrays[j] > temp){
+            while (j >= 0 && arrays[j] > temp) {
                 arrays[j + 1] = arrays[j];
-                j --;
+                j--;
             }
             arrays[j + 1] = temp;
         }
     }
 
     public static void main(String[] args) {
-        int[] arr = { 87, 45, 78, 32, 17, 65, 53, 9, 122 };
+        int[] arr = {87, 45, 78, 32, 17, 65, 53, 9, 122};
         sort(arr);
         System.out.println(Arrays.toString(arr));
     }

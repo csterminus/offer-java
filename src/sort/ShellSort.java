@@ -1,4 +1,4 @@
-package algorithm;
+package sort;
 
 public class ShellSort {
     /*
@@ -16,14 +16,14 @@ public class ShellSort {
     就是每隔3个数取一个,每隔三个再取一个,这样取出来的数字放到一组,
     把它们当成一组,但不实际分组,只是当成一组来看,所以上边的"组"实际上并不存在,只是为了说明分组关系
      */
-    public static void sort(int[] array){
-        int group,i,j,temp;
+    public static void sort(int[] array) {
+        int group, i, j, temp;
         //取增量
-        for(group = array.length / 2; group > 0 ; group /= 2){
+        for (group = array.length / 2; group > 0; group /= 2) {
             //无序序列
-            for(i = group; i < array.length; i++){
-                for(j = i - group; j >= 0; j -= group){
-                    if(array[j] > array[j + group]){
+            for (i = group; i < array.length; i++) {
+                for (j = i - group; j >= 0; j -= group) {
+                    if (array[j] > array[j + group]) {
                         temp = array[j];
                         array[j] = array[j + group];
                         array[j + group] = temp;

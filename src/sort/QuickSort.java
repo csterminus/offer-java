@@ -1,4 +1,4 @@
-package algorithm;
+package sort;
 
 import java.util.Arrays;
 import java.util.Stack;
@@ -47,23 +47,23 @@ public class QuickSort {
         stack.push(left);
         stack.push(right);
         while (!stack.isEmpty()) {
-                int high = stack.pop();
-                int low = stack.pop();
-                int pivotIndex = partition(arr, low, high);
-                if (low < pivotIndex ) {
-                    stack.push(low);
-                    stack.push(pivotIndex - 1);
-                }
-                if (pivotIndex  < high && pivotIndex>=0) {
-                    stack.push(pivotIndex + 1);
-                    stack.push(high);
-                }
+            int high = stack.pop();
+            int low = stack.pop();
+            int pivotIndex = partition(arr, low, high);
+            if (low < pivotIndex) {
+                stack.push(low);
+                stack.push(pivotIndex - 1);
+            }
+            if (pivotIndex < high && pivotIndex >= 0) {
+                stack.push(pivotIndex + 1);
+                stack.push(high);
             }
         }
+    }
 
     public static void main(String[] args) {
-        int[] arr = { 87, 45, 78, 32, 17, 65, 53, 9, 122 };
-        quickSort(arr,0,arr.length-1);
+        int[] arr = {87, 45, 78, 32, 17, 65, 53, 9, 122};
+        quickSort(arr, 0, arr.length - 1);
         //quickSortNoRec(arr,0,arr.length-1);
         System.out.println(Arrays.toString(arr));
     }
