@@ -2,13 +2,14 @@ package juc;
 
 import java.util.concurrent.*;
 
+//Future使用
 public class TestFuture {
     public static void main(String[] args) {
         TestFuture testFuture = new TestFuture();
         testFuture.future();
     }
 
-    public void future(){
+    public void future() {
         ExecutorService executor = Executors.newCachedThreadPool();
         Future<Double> future = executor.submit(new Callable<Double>() {
             @Override
@@ -17,18 +18,19 @@ public class TestFuture {
             }
         });
         doSomethingElse();
-        try{
+        try {
             Double result = future.get(1, TimeUnit.SECONDS);
             System.out.println("result is" + result);
-        }catch (InterruptedException | ExecutionException | TimeoutException e){
+        } catch (InterruptedException | ExecutionException | TimeoutException e) {
             e.printStackTrace();
         }
     }
 
-    private void doSomethingElse(){
+    private void doSomethingElse() {
         System.out.println("doSomethingElse");
     }
-    private double doSomethingComputation(){
+
+    private double doSomethingComputation() {
         System.out.println("doSomethingComputation");
         return 0.1;
     }

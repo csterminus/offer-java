@@ -19,7 +19,7 @@ public class Leetcode121 {
         int res = 0;
         dp_max[0] = 0;
         for(int i = 1;i < prices.length;i++){
-            dp_max[i] = dp_max[i - 1] + prices[i] - prices[i - 1] > 0 ? dp_max[i - 1] + prices[i] - prices[i - 1] : 0;
+            dp_max[i] = Math.max(dp_max[i - 1] + prices[i] - prices[i - 1], 0);
             res = Math.max(res,dp_max[i]);
         }
         return res;

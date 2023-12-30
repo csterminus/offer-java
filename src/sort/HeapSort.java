@@ -1,4 +1,4 @@
-package algorithm;
+package sort;
 
 import java.util.Arrays;
 
@@ -14,9 +14,9 @@ public class HeapSort {
      * 父节点i的右子节点在位置：（2*i+2）
      * 子节点i的父节点在floor((i-1)/2)
      */
-    public static void heapSort(int[] arr){
-        for(int i = arr.length-1; i > 0; i--){
-            max_heapify(arr,i);
+    public static void heapSort(int[] arr) {
+        for (int i = arr.length - 1; i > 0; i--) {
+            max_heapify(arr, i);
 
             int temp = arr[0];//堆顶元素(第一个元素)与Kn交换
             arr[0] = arr[i - 1];
@@ -25,19 +25,19 @@ public class HeapSort {
     }
 
     private static void max_heapify(int[] arr, int limit) {
-        if(arr.length <= 0 || arr.length <limit)
+        if (arr.length <= 0 || arr.length < limit)
             return;
         int parentIdx = limit / 2;
 
-        for(; parentIdx>=0; parentIdx--){
-            if(parentIdx * 2 >= limit){
+        for (; parentIdx >= 0; parentIdx--) {
+            if (parentIdx * 2 >= limit) {
                 continue;
             }
             int left = parentIdx * 2; //左子节点位置
             int right = (left + 1) >= limit ? left : (left + 1);//右子节点位置，如果没有右节点，默认为左节点位置
 
             int maxChildId = arr[left] >= arr[right] ? left : right;
-            if(arr[maxChildId] > arr[parentIdx]){  //交换父节点与左右子节点中的最大值
+            if (arr[maxChildId] > arr[parentIdx]) {  //交换父节点与左右子节点中的最大值
                 int temp = arr[parentIdx];
                 arr[parentIdx] = arr[maxChildId];
                 arr[maxChildId] = temp;
@@ -47,7 +47,7 @@ public class HeapSort {
     }
 
     public static void main(String[] args) {
-        int[] arr = { 87, 45, 78, 32, 17, 65, 53, 9, 122 };
+        int[] arr = {87, 45, 78, 32, 17, 65, 53, 9, 122};
         HeapSort heapSort = new HeapSort();
         heapSort.heapSort(arr);
     }
