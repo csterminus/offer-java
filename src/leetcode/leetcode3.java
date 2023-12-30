@@ -5,7 +5,8 @@ public class leetcode3 {
     public static void main(String[] args) {
         String str = "abcab";
         leetcode3 leetcode3 = new leetcode3();
-        System.out.println(leetcode3.lengthOfLongestSubstring(str));
+        //System.out.println(leetcode3.lengthOfLongestSubstring(str));
+        System.out.println(Integer.toHexString(1542));
     }
 
     public int lengthOfLongestSubstring(String s) {

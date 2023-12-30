@@ -7,6 +7,9 @@ public class leetcode4 {
         int[] nums1 = new int[]{1,2};
         int[] nums2 = new int[]{3,4};
         System.out.println(leetcode4.findMedianSortedArrays(nums1,nums2));
+        ThreadLocal<String> stringThreadLocal = new ThreadLocal<>();
+        stringThreadLocal.set("test");
+        stringThreadLocal.get();
     }
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
