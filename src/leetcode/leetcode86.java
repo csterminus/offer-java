@@ -34,6 +34,15 @@ public class leetcode86 {
         return smallHead2.next;
     }
 
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+        if (head == null) {
+            return null;
+        }
+
+        //TODO
+        return null;
+    }
+
     public ListNode buildListNode() {
         ListNode node1 = new ListNode(1);
         ListNode node2 = new ListNode(4);
@@ -49,17 +58,6 @@ public class leetcode86 {
         return node1;
     }
 
-    public ListNode detectCycle(ListNode head) {
-        if (head == null) {
-            return null;
-        }
-        ListNode slow = head;
-        ListNode fast = head;
-
-        while (head.next != null) {
-
-        }
-    }
 
     public class ListNode {
         int val;
