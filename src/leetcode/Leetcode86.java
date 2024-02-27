@@ -4,10 +4,10 @@ package leetcode;
  * @author chengshi
  * @date 2024/1/16 13:56
  */
-public class leetcode86 {
+public class Leetcode86 {
 
     public static void main(String[] args) {
-        leetcode86 leetcode86 = new leetcode86();
+        Leetcode86 leetcode86 = new Leetcode86();
         ListNode node = leetcode86.partition(leetcode86.buildListNode(), 3);
     }
 

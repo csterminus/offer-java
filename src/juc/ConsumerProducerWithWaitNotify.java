@@ -18,6 +18,7 @@ public class ConsumerProducerWithWaitNotify {
 
     class Consumer extends Thread {
         private EventStorge storge;
+
         public Consumer(EventStorge storge) {
             this.storge = storge;
         }
@@ -36,6 +37,7 @@ public class ConsumerProducerWithWaitNotify {
 
     class Producer extends Thread {
         private EventStorge storge;
+
         public Producer(EventStorge storge) {
             this.storge = storge;
         }
@@ -53,7 +55,7 @@ public class ConsumerProducerWithWaitNotify {
     }
 
     class EventStorge {
-        private LinkedList<Integer> list=null;
+        private LinkedList<Integer> list = null;
         private int maxSize = 0;
 
         public EventStorge() {
@@ -65,7 +67,7 @@ public class ConsumerProducerWithWaitNotify {
             while (list.size() == maxSize) { // not if
                 wait();
             }
-            System.out.println("生产者放入"+num+"---");
+            System.out.println("生产者放入" + num + "---");
             list.add(num);
             notify();
         }
@@ -74,8 +76,8 @@ public class ConsumerProducerWithWaitNotify {
             while (list.isEmpty()) {
                 wait();
             }
+            System.out.println("消费者取出 " + list.poll() + "还有" + list.size() + "个");
             notify();
-            System.out.println("消费者取出 " + list.poll() +"还有" + list.size()+"个");
         }
 
     }
