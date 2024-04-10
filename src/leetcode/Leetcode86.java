@@ -1,6 +1,8 @@
 package leetcode;
 
 /**
+ * 分隔链表
+ *
  * @author chengshi
  * @date 2024/1/16 13:56
  */

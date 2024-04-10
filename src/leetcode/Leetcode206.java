@@ -1,47 +1,35 @@
 package leetcode;
 
+/**
+ * 翻转链表
+ */
 public class Leetcode206 {
-
-     public class ListNode {
-         int val;
-         ListNode next;
-
-         ListNode() {
-         }
-
-         ListNode(int val) {
-             this.val = val;
-         }
-
-         ListNode(int val, ListNode next) {
-             this.val = val;
-             this.next = next;
-         }
-     }
-        public ListNode reverseList(ListNode head) {
-            if(head == null){
-                return null;
-            }
-            ListNode node = new ListNode(-1);
-            while(head.next != null){
-                ListNode temp = head;
-                head = head.next;
-                temp.next = node.next;
-                node.next = temp;
-
-            }
-            return node.next;
-        }
 
     public static void main(String[] args) {
         Leetcode206 leetcode206 = new Leetcode206();
         Leetcode206.ListNode node = leetcode206.reverseList(leetcode206.buildListNode());
-        while(node != null){
+        while (node != null) {
             System.out.println(node.val);
             node = node.next;
         }
     }
-    public ListNode buildListNode(){
+
+    public ListNode reverseList(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+        ListNode node = new ListNode(-1);
+        while (head.next != null) {
+            ListNode temp = head;
+            head = head.next;
+            temp.next = node.next;
+            node.next = temp;
+
+        }
+        return node.next;
+    }
+
+    public ListNode buildListNode() {
         ListNode node1 = new ListNode(1);
         ListNode node2 = new ListNode(1);
         ListNode node3 = new ListNode(6);
@@ -56,5 +44,22 @@ public class Leetcode206 {
         node5.next = node6;
         node6.next = node7;
         return node1;
+    }
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
     }
 }

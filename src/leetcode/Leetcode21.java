@@ -7,7 +7,6 @@ public class Leetcode21 {
         Leetcode21 leetcode21 = new Leetcode21();
         ListNode node = leetcode21.mergeTwoLists(leetcode21.buildNode1(), leetcode21.buildNode2());
         while (node != null) {
-            System.out.println(node.val);
             node = node.next;
         }
     }
