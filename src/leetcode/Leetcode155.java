@@ -8,35 +8,46 @@ import java.util.Stack;
  */
 public class Leetcode155 {
     public static void main(String[] args) {
-
+        MinStack minStack = new MinStack();
+        minStack.push(-2);
+        minStack.push(0);
+        minStack.push(-3);
+        System.out.println(minStack.getMin()); // return -3
+        minStack.pop();
+        System.out.println(minStack.top());  // return 0
+        System.out.println(minStack.getMin()); // return -2
     }
 
-    public class MinStack {
+    public static class MinStack {
         private Stack<Integer> stack;
-        private Stack<Integer> minStack;
+        private Integer min;
 
         public MinStack() {
             this.stack = new Stack<>();
-            this.minStack = new Stack<>();
         }
 
         public void push(int val) {
             if (stack.isEmpty()) {
-                stack.push(val);
-                minStack.push(val);
+                min = val;
             } else {
-                if (val < minStack.peek()) {
-                    minStack.push(val);
+                if (val < min) {
+                    min = val;
                 }
             }
             stack.push(val);
         }
 
         public void pop() {
-            if (stack.peek().equals(minStack.peek())) {
-                minStack.pop();
+            if (stack.pop().equals(min)) {
+                if (!stack.isEmpty()) {
+                    min = stack.peek();
+                    for (int i = 0; i < stack.size(); i++) {
+                        if (stack.get(i) < min) {
+                            min = stack.get(i);
+                        }
+                    }
+                }
             }
-            stack.pop();
         }
 
         public int top() {
@@ -44,7 +55,7 @@ public class Leetcode155 {
         }
 
         public int getMin() {
-            return minStack.peek();
+            return min;
         }
     }
 }
