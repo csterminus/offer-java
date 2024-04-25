@@ -13,7 +13,8 @@ public class Leetcode224 {
         if (s == null || s.length() == 0) {
             return 0;
         }
-        
+        return 0;
+
     }
 
 }

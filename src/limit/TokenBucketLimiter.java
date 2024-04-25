@@ -31,7 +31,7 @@ public class TokenBucketLimiter {
         TokenBucketLimiter tokenBucketLimiter = new TokenBucketLimiter(5, 1000);
         for (int i = 1; i <= 10; i++) {
             Request request = new Request("request" + i);
-            Thread.sleep(1000);
+            Thread.sleep(100);
             if (tokenBucketLimiter.processRequest(request)) {
                 System.out.println(i + "号请求被接受");
             } else {
