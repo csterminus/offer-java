@@ -5,6 +5,7 @@ package offer;
  * @date 2024/5/8 15:35
  */
 public class offer51 {
+    //求数组中的逆序数
     int count;
 
     public static void main(String[] args) {
