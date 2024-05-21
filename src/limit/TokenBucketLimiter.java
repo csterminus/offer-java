@@ -12,15 +12,15 @@ public class TokenBucketLimiter {
     // 令牌桶也有一定的容量，如果满了令牌就无法放进去了。
     // 当请求来时，会首先到令牌桶中去拿令牌，如果拿到了令牌，则该请求会被处理，并消耗掉拿到的令牌；如果令牌桶为空，则该请求会被丢弃。
     //令牌桶算法是对漏桶算法的一种改进，除了能够在限制调用的平均速率的同时还允许一定程度的流量突发
-    private int capaticy;//令牌桶容量
+    private int capacity;//令牌桶容量
     private long rate;//令牌产生速率 毫秒
     private ArrayBlockingQueue<Token> bucket;//令牌数量
 
-    public TokenBucketLimiter(int capaticy, int rate) {
-        this.capaticy = capaticy;
+    public TokenBucketLimiter(int capacity, int rate) {
+        this.capacity = capacity;
         this.rate = rate;
-        this.bucket = new ArrayBlockingQueue<>(capaticy);
-        for (int i = 0; i < capaticy; i++) {
+        this.bucket = new ArrayBlockingQueue<>(capacity);
+        for (int i = 0; i < capacity; i++) {
             bucket.add(new Token());
         }
         Thread thread = new Thread(this::produceToken);
@@ -53,7 +53,7 @@ public class TokenBucketLimiter {
 
     private void produceToken() {
         while (true) {
-            if (bucket.size() < capaticy) {
+            if (bucket.size() < capacity) {
                 bucket.add(new Token());
             }
             try {

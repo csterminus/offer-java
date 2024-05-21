@@ -80,6 +80,4 @@ public class LRUCache<K, V> {
             this.value = value;
         }
     }
-
-
 }

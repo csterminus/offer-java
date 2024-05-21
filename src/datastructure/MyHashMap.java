@@ -93,7 +93,7 @@ public class MyHashMap<K, V> {
             }
         }
         if ((double) size / buckets.length >= LOAD_FACTOR) {
-
+            resize();
         }
     }
 
