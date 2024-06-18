@@ -34,6 +34,7 @@ public class Leetcode40 {
         }
         for (int i = index; i < candidates.length; i++) {
             if (i > index && candidates[i] == candidates[i - 1]) continue;
+            if (candidates[i] > target) break;
             list.add(candidates[i]);
             sum = sum + candidates[i];
 
