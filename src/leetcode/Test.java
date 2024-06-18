@@ -2,6 +2,10 @@ package leetcode;
 
 
 import java.util.*;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.Semaphore;
 
 /**
  * Created by chengshi on 2022/2/22 2:12 下午
@@ -302,5 +306,6 @@ public class Test {
             this.val = val;
         }
     }
+
 
 }

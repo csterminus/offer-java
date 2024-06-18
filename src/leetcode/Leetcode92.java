@@ -1,12 +1,14 @@
 package leetcode;
 
+import offer.offer6;
+
 /**
  * 翻转链表 m - n
  */
 public class Leetcode92 {
     public static void main(String[] args) {
         Leetcode92 leetcode92 = new Leetcode92();
-        ListNode node = leetcode92.reverseBetween(leetcode92.build(), 2, 4);
+        ListNode node = leetcode92.res(leetcode92.build());
         while (node != null) {
             System.out.println(node.val);
             node = node.next;
@@ -32,6 +34,18 @@ public class Leetcode92 {
             preStart.next = temp;
         }
         return dummy.next;
+    }
+
+    public ListNode res(ListNode listNode){
+        ListNode head = new ListNode(-1);
+        while(listNode!=null){
+            ListNode memo = listNode.next;
+            //第一次循环head.next为null
+            listNode.next = head.next;
+            head.next = listNode;
+            listNode = memo;
+        }
+        return head.next;
     }
 
     //翻转链表
