@@ -6,7 +6,7 @@ package juc;
  */
 public class Wait_Notify_Odd_Even_2 {
     private static final Object obj = new Object();
-    private static int count = 0;
+    private static int count = 1;
 
     public static void main(String[] args) {
         Thread thread1 = new Thread(new Task("a"));
