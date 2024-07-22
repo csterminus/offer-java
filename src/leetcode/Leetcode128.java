@@ -9,7 +9,9 @@ import java.util.Set;
  */
 public class Leetcode128 {
     public static void main(String[] args) {
-
+        int[] nums = new int[]{1, 230, 6, 8, 7, 0, 9, 100};
+        Leetcode128 leetcode128 = new Leetcode128();
+        System.out.println(leetcode128.longestSize(nums));
     }
 
     private int longestSize(int[] nums) {
@@ -24,7 +26,7 @@ public class Leetcode128 {
         for (Integer num : set) {
             if (!set.contains(num - 1)) {
                 int large = 1;
-                while (set.contains(num)) {
+                while (set.contains(num + 1)) {
                     num++;
                     large++;
                 }
@@ -32,6 +34,5 @@ public class Leetcode128 {
             }
         }
         return res;
-
     }
 }

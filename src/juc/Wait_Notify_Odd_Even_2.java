@@ -9,18 +9,13 @@ public class Wait_Notify_Odd_Even_2 {
     private static int count = 1;
 
     public static void main(String[] args) {
-        Thread thread1 = new Thread(new Task("a"));
-        Thread thread2 = new Thread(new Task2("b"));
+        Thread thread1 = new Thread(new Task());
+        Thread thread2 = new Thread(new Task2());
         thread1.start();
         thread2.start();
     }
 
     static class Task implements Runnable {
-        private String name;
-
-        public Task(String name) {
-            this.name = name;
-        }
 
         @Override
         public void run() {
@@ -44,12 +39,6 @@ public class Wait_Notify_Odd_Even_2 {
     }
 
     static class Task2 implements Runnable {
-        private String name;
-
-        public Task2(String name) {
-            this.name = name;
-        }
-
         @Override
         public void run() {
             while (count <= 100) {
