@@ -3,6 +3,12 @@ package sort;
 import java.util.Arrays;
 
 public class HeapSort {
+    public static void main(String[] args) {
+        int[] arr = {87, 45, 78, 32, 17, 65, 53, 9, 122};
+        HeapSort heapSort = new HeapSort();
+        heapSort.heapSort(arr);
+    }
+
     /**
      * 、基本思想
      * 此处以大顶堆为例，堆排序的过程就是将待排序的序列构造成一个堆，选出堆中最大的移走，再把剩余的元素调整成堆，找出最大的再移走，重复直至有序。
@@ -14,19 +20,20 @@ public class HeapSort {
      * 父节点i的右子节点在位置：（2*i+2）
      * 子节点i的父节点在floor((i-1)/2)
      */
-    public static void heapSort(int[] arr) {
+    public void heapSort(int[] arr) {
         for (int i = arr.length - 1; i > 0; i--) {
-            max_heapify(arr, i);
-
-            int temp = arr[0];//堆顶元素(第一个元素)与Kn交换
+            maxHeapify(arr, i);
+            //堆顶元素(第一个元素)与Kn交换
+            int temp = arr[0];
             arr[0] = arr[i - 1];
             arr[i - 1] = temp;
         }
     }
 
-    private static void max_heapify(int[] arr, int limit) {
-        if (arr.length <= 0 || arr.length < limit)
+    private void maxHeapify(int[] arr, int limit) {
+        if (arr.length <= 0 || arr.length < limit) {
             return;
+        }
         int parentIdx = limit / 2;
 
         for (; parentIdx >= 0; parentIdx--) {
@@ -44,12 +51,6 @@ public class HeapSort {
             }
         }
         System.out.println(Arrays.toString(arr));
-    }
-
-    public static void main(String[] args) {
-        int[] arr = {87, 45, 78, 32, 17, 65, 53, 9, 122};
-        HeapSort heapSort = new HeapSort();
-        heapSort.heapSort(arr);
     }
 
 }

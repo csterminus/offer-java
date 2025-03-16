@@ -289,6 +289,29 @@ public class twoTree {
         }
     }
 
+    //判断是否为镜像二叉树
+    public boolean isSymmetric(TreeNode root) {
+        if (root == null) {
+            return true;
+        }
+        return isEqual(root.left, root.right);
+    }
+
+    public boolean isEqual(TreeNode root1, TreeNode root2) {
+        if (root1 == null && root2 == null) {
+            return true;
+        }
+        if (root1 == null || root2 == null) {
+            return false;
+        }
+        if (root1.val != root2.val) {
+            return false;
+        }
+        //关键代码，镜像特点
+        return isEqual(root1.left, root2.right) && isEqual(root1.right, root2.left);
+    }
+
+
     public void test() {
         TreeNode t1 = new TreeNode(1);
         TreeNode t2 = new TreeNode(2);
