@@ -1,8 +1,10 @@
 package leetcode;
 
 import java.util.Stack;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
+ * 用栈实现队列
  * @author chengshi
  * @date 2024/4/25 17:13
  */

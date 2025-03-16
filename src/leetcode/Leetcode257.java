@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 二叉树的所有路径
  * @author chengshi
  * @date 2024/6/28 17:43
  */
@@ -33,6 +34,7 @@ public class Leetcode257 {
         if (root == null) {
             return new ArrayList<>();
         }
+        return null;
     }
 
     public static class TreeNode {
