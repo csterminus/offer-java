@@ -3,13 +3,14 @@ package leetcode;
 import java.util.*;
 
 /**
+ * 小于n的最大值
  * @author chengshi
  * @date 2024/5/6 15:59
  */
-public class XiaoYuNdeZuiDaZhi {
+public class XiaoYuNDeZuiDaZhi {
     public static void main(String[] args) {
         int[] nums = new int[]{1, 2, 9, 4};
-        XiaoYuNdeZuiDaZhi xiaoYuNdeZuiDaZhi = new XiaoYuNdeZuiDaZhi();
+        XiaoYuNDeZuiDaZhi xiaoYuNdeZuiDaZhi = new XiaoYuNDeZuiDaZhi();
         xiaoYuNdeZuiDaZhi.getMax(nums, 2533);
     }
 
