@@ -55,7 +55,7 @@ public class Test {
         }
         return null;
     }
-
+    //寻找旋转数组的最小值
     public int solution2(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
@@ -74,7 +74,7 @@ public class Test {
         }
         return nums[left];
     }
-
+    //单词搜索
     public boolean solution3(char[][] broad, String str) {
         if (broad == null || str == null || broad.length == 0 || broad[0].length == 0) {
             return false;
@@ -124,7 +124,7 @@ public class Test {
         visit[i][j] = false;
         return false;
     }
-
+    //机器人移动范围
     public int moveCount(int threshold, int row, int col) {
         if (threshold < 0 || row < 1 || col < 1) {
             return 0;
@@ -207,7 +207,7 @@ public class Test {
         }
         return list;
     }
-
+    //左根右
     public List<Integer> midIterTreeNode(TreeLinkNode treeLinkNode) {
         if (treeLinkNode == null) {
             return new ArrayList<>();
@@ -227,7 +227,7 @@ public class Test {
 
     }
 
-    //左根右
+
 
     //左右根
     public List<Integer> lastIterTreeNode(TreeLinkNode treeLinkNode) {

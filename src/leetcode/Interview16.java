@@ -8,7 +8,7 @@ public class Interview16 {
     public static void main(String[] args) {
 
     }
-
+    // 找出数组中最小的和最大的元素，然后分别向左向右扫描找到这两个元素的边界
     public int[] subSort(int[] nums) {
         if (nums == null || nums.length == 0 || nums.length == 1) {
             return new int[]{-1, -1};

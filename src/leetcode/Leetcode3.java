@@ -1,5 +1,8 @@
 package leetcode;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Leetcode3 {
     //最长不重复子串
     public static void main(String[] args) {
@@ -9,22 +12,19 @@ public class Leetcode3 {
     }
 
     public int lengthOfLongestSubstring(String s) {
-        if (s == null || s.length() == 0) {
+        if(s == null || s.length() == 0){
             return 0;
         }
-        int[] temp = new int[256];
-        for (int i = 0; i < temp.length; i++) {
-            temp[i] = -1;
-        }
-        int front = 0;
+        Set<Character> set = new HashSet<>();
         int max = 0;
-        for (int i = 0; i < s.length(); i++) {
-            if (temp[s.charAt(i)] != -1 && temp[s.charAt(i)] >= front) {
-                //标记上一次出现的位置
-                front = temp[s.charAt(i)] + 1;
+        int left = 0;
+        for(int i = 0;i < s.length();i++){
+            while(set.contains(s.charAt(i))){
+                set.remove(s.charAt(left));
+                left++;
             }
-            temp[s.charAt(i)] = i;
-            max = Math.max(max, i - front + 1);
+            set.add(s.charAt(i));
+            max = Math.max(max,i - left + 1);
         }
         return max;
     }
