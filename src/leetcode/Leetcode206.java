@@ -15,18 +15,17 @@ public class Leetcode206 {
     }
 
     public ListNode reverseList(ListNode head) {
-        if (head == null) {
+        if(head == null ){
             return null;
         }
-        ListNode node = new ListNode(-1);
-        while (head.next != null) {
-            ListNode temp = head;
+        ListNode temp = new ListNode(-1);
+        while(head != null){
+            ListNode cur = head;
             head = head.next;
-            temp.next = node.next;
-            node.next = temp;
-
+            cur.next = temp.next;
+            temp.next = cur;
         }
-        return node.next;
+        return temp.next;
     }
 
     public ListNode buildListNode() {
