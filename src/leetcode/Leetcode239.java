@@ -1,5 +1,6 @@
 package leetcode;
 
+import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedList;
 
@@ -7,6 +8,7 @@ import java.util.LinkedList;
  * @author chengshi
  * @date 2024/4/25 17:38
  */
+//滑动窗口的最大值
 public class Leetcode239 {
     public static void main(String[] args) {
         Leetcode239 leetcode239 = new Leetcode239();
@@ -15,34 +17,22 @@ public class Leetcode239 {
     }
 
     public int[] maxSlidingWindow(int[] nums, int k) {
-        if (nums == null || nums.length == 0) {
-            return null;
+        if (nums == null || nums.length == 0 || k <= 0) {
+            return new int[0];
         }
         int[] res = new int[nums.length - k + 1];
-        int count = 0;
-        if (nums.length == 1 || k == 1) {
-            return nums;
-        }
-        Deque<Integer> queue = new LinkedList<>();
-        for (int i = 0; i < k; i++) {
-            while (!queue.isEmpty() && queue.peekLast() < nums[i]) {
-                queue.removeLast();
+        Deque<Integer> deque = new ArrayDeque<>();
+        for(int i = 0;i < nums.length ;i++){
+            while(!deque.isEmpty() && deque.peekFirst() < i - k + 1){
+                deque.pollFirst();
             }
-            queue.offerLast(nums[i]);
-        }
-        res[count++] = queue.peekFirst();
-        for (int j = k; j < nums.length; j++) {
-            if (nums[j - k] == queue.peekFirst()) {
-                queue.removeFirst();
+            while(!deque.isEmpty() && nums[deque.peekLast()] < nums[i]){
+                deque.pollLast();
             }
-            while (!queue.isEmpty() && queue.peekLast() < nums[j]) {
-                queue.removeLast();
+            deque.offerLast(i);
+            if(i >= k - 1){
+                res[i - k + 1] = nums[deque.peekFirst()];
             }
-            queue.offerLast(nums[j]);
-            res[count++] = queue.peekFirst();
-        }
-        for (int i = 0; i < res.length; i++) {
-            System.out.println(res[i]);
         }
         return res;
     }

@@ -8,11 +8,11 @@ import offer.offer6;
 public class Leetcode92 {
     public static void main(String[] args) {
         Leetcode92 leetcode92 = new Leetcode92();
-        ListNode node = leetcode92.res(leetcode92.build());
-        while (node != null) {
-            System.out.println(node.val);
-            node = node.next;
-        }
+        ListNode node = leetcode92.reverseBetween(leetcode92.build(),2,4);
+//        while (node != null) {
+//            System.out.println(node.val);
+//            node = node.next;
+//        }
     }
 
     public ListNode reverseBetween(ListNode head, int m, int n) {
@@ -69,7 +69,7 @@ public class Leetcode92 {
         node.next = node1;
         node1.next = node2;
         node2.next = node3;
-        node4.next = node4;
+        node3.next = node4;
         return node;
     }
 

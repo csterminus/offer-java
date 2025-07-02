@@ -12,7 +12,7 @@ public class CyclicBarrierDemo {
 
         CyclicBarrier cyclicBarrier = new CyclicBarrier(3);
 
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 3; i++) {
 
             new Thread(new Task(i + 1, cyclicBarrier)).start();
 

@@ -32,9 +32,9 @@ class LRUCache2{
         if(map.containsKey(key)){
             map.remove(key);
         }else if(map.size() == capacity){
-            Iterator<Map.Entry<Integer,Integer>> iterator = map.entrySet().iterator();
-            iterator.next();
-            iterator.remove();
+            Iterator<Map.Entry<Integer, Integer>> iterator = map.entrySet().iterator();
+            Map.Entry<Integer, Integer> eldest = iterator.next();
+            map.remove(eldest.getKey());
         }
         map.put(key,value);
     }

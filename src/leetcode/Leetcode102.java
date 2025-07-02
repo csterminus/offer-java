@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Queue;
 
 /**
+ * 二叉树层次遍历
  * @author chengshi
  * @date 2024/5/15 17:05
  */
@@ -16,35 +17,28 @@ public class Leetcode102 {
     }
 
     public List<List<Integer>> levelOrder(TreeNode root) {
-        if (root == null) {
+        if(root == null){
             return new ArrayList<>();
         }
-        List<List<Integer>> res = new ArrayList<>();
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(root);
-        List<Integer> list = new ArrayList<>();
-        int count = 0;
-        int cur = 1;
-        while (!queue.isEmpty()) {
-            TreeNode p = queue.poll();
-            list.add(p.val);
-            if (p.left != null) {
-                queue.add(p.left);
-                count++;
+        List<List<Integer>> list = new ArrayList<>();
+        Queue<TreeNode> nodes = new LinkedList<>();
+        nodes.add(root);
+        while (!nodes.isEmpty()){
+            List<Integer> l = new ArrayList<>();
+            int count = nodes.size();
+            for(int i = 0;i < count;i++){
+                TreeNode node = nodes.poll();
+                l.add(node.val);
+                if(node.left != null){
+                    nodes.add(node.left);
+                }
+                if(node.right != null){
+                    nodes.add(node.right);
+                }
             }
-            if (p.right != null) {
-                queue.add(p.right);
-                count++;
-            }
-            cur--;
-            if (cur == 0) {
-                res.add(list);
-                list = new ArrayList<>();
-                cur = count;
-                count = 0;
-            }
+            list.add(l);
         }
-        return res;
+        return list;
     }
 
     public void test() {

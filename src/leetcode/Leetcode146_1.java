@@ -11,7 +11,7 @@ public class Leetcode146_1 {
 }
 class LRUCache1 {
     Queue<Integer> queue ;
-    Map<Integer,Integer>  map ;
+    Map<Integer,Integer> map ;
     int capacity;
     public LRUCache1(int capacity) {
         this.map = new HashMap<>();
