@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
  * @author chengshi
  * @date 2024/7/24 17:51
  */
-public class Test6 {
+public class ThreadLocalDemo {
     public static void main(String[] args) {
         ExecutorService executorService = new ThreadPoolExecutor(2, 3, 0, TimeUnit.MILLISECONDS, new SynchronousQueue<>());
 //        TransmittableThreadLocal<String> threadLocal = new TransmittableThreadLocal<>();

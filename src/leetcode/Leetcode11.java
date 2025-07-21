@@ -8,7 +8,7 @@ public class Leetcode11 {
     }
 
     /**
-     * 接雨水
+     * 盛水最多的容器
      *
      * @param height
      * @return

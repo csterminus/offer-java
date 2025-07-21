@@ -3,9 +3,9 @@ package juc;
 import java.util.concurrent.*;
 
 //Future使用
-public class TestFuture {
+public class FutureDemo {
     public static void main(String[] args) {
-        TestFuture testFuture = new TestFuture();
+        FutureDemo testFuture = new FutureDemo();
         testFuture.future();
     }
 

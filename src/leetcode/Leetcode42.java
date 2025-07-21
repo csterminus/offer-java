@@ -1,7 +1,7 @@
 package leetcode;
 
 public class Leetcode42 {
-    //容器接雨水
+    //接雨水
     public static void main(String[] args) {
         Leetcode42 leetcode42 = new Leetcode42();
         int[] nums = new int[]{3,1,2,5,2,4};
