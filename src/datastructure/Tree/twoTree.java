@@ -68,6 +68,7 @@ public class twoTree {
         }
     }
 
+
     //递归后序
     public void postOrder(TreeNode node) {
         if (node == null) {
@@ -109,7 +110,6 @@ public class twoTree {
                 }
             }
         }
-
         return list;
     }
 
@@ -310,6 +310,25 @@ public class twoTree {
         //关键代码，镜像特点
         return isEqual(root1.left, root2.right) && isEqual(root1.right, root2.left);
     }
+    
+    //判断两个二叉树是否相同
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        // 如果两个树都为空，则它们是相同的
+        if (p == null && q == null) {
+            return true;
+        }
+        // 如果一个树为空而另一个不为空，则它们不相同
+        if (p == null || q == null) {
+            return false;
+        }
+        // 如果根节点的值不同，则它们不相同
+        if (p.val != q.val) {
+            return false;
+        }
+        // 递归地检查左子树和右子树
+        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+    }
+
 
 
     public void test() {

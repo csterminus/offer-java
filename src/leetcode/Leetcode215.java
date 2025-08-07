@@ -1,12 +1,16 @@
 package leetcode;
 
+import java.util.HashSet;
+import java.util.PriorityQueue;
+import java.util.Set;
+
 public class Leetcode215 {
     //快排的思路找出k大个数
     public static void main(String[] args) {
         Leetcode215 leetcode215 = new Leetcode215();
         int[] nums = new int[]{3,2,1,5,6,4};
         int k = 2;
-        System.out.println(leetcode215.quickSelect(nums,0,nums.length - 1,nums.length - k));
+        System.out.println(leetcode215.findKthLargest(nums,k));
     }
 
     int partition(int[] nums,int i,int j){
@@ -37,5 +41,22 @@ public class Leetcode215 {
         }else {
             return quickSelect(nums, i,k - 1, index);
         }
+    }
+
+    public int findKthLargest(int[] nums, int k) {
+        if(nums == null || nums.length == 0){
+            return 0;
+        }
+
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue(k);
+        for(int i = 0;i < nums.length;i++){
+            if(priorityQueue.size() < k){
+                priorityQueue.add(nums[i]);
+            }else if(nums[i] > priorityQueue.peek()){
+                    priorityQueue.poll();
+                    priorityQueue.add(nums[i]);
+            }
+        }
+        return priorityQueue.peek();
     }
 }
